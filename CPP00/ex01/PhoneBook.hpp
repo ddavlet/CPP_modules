@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:10:56 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/11 15:06:50 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:56:07 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <unistd.h>
 
 class PhoneBook
 {
@@ -24,8 +25,10 @@ public:
 	PhoneBook();
 	~PhoneBook();
 	void	add();
-	void	search();
+	void	list();
+	Contact	find_contact(int indx);
 	int		numberofContacts();
+	static void	smooth_print(std::string txt);
 };
 
 

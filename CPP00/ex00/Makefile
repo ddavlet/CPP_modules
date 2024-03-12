@@ -8,7 +8,6 @@ SRC_DIR :=
 SOURCE := megaphone.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
-DRAW := ./draw
 
 all: $(TARGET)
 

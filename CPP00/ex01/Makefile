@@ -1,14 +1,13 @@
 CC := c++
-CPPFLAGS := -Wall -Wextra -Werror -std=c++98
-TARGET := ./megaphone
+CPPFLAGS := -Wall -Wextra -Werror -g -std=c++98
+TARGET := ./phonebook
 
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
-SOURCE := megaphone.cpp
+SOURCE := Contact.cpp PhoneBook.cpp main.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
-DRAW := ./draw
 
 all: $(TARGET)
 
