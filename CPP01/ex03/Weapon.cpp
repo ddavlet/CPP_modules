@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:14:26 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/12 16:26:03 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/03/12 20:00:25 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ Weapon::Weapon()
 }
 
 Weapon::~Weapon()
+{
+}
+
+Weapon::Weapon(const std::string& type) : type(type)
 {
 }
 

@@ -1,10 +1,10 @@
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98 -g
-TARGET := ./ex03
+TARGET := ./replace
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
-SOURCE := main.cpp HumanB.cpp HumanA.cpp Weapon.cpp
+SOURCE := main.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
 
