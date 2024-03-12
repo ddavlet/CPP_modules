@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:10:49 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/12 13:17:33 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:17:21 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,11 @@ void	PhoneBook::list()
 
 int		PhoneBook::numberofContacts() // ??
 {
-	return this->_index;
+	int	i = 0;
+
+	while (this->_contacts[i].exists())
+		i++;
+	return i;
 }
 
 Contact	PhoneBook::find_contact(int indx)

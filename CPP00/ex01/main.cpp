@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:11:03 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/12 13:15:36 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:16:16 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,14 @@ void	search_handler(PhoneBook phonebook)
 			std::cin.clear();
 			input = "";
 		}
-		else
+		else if (std::atoi(input.c_str()) <= 8)
 			phonebook.find_contact(std::atoi(input.c_str())).displayFull();
+		else
+		{
+			PhoneBook::smooth_print("Invalid input, please try again\n");
+			std::cin.clear();
+			input = "";
+		}
 	}
 }
 
