@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 20:57:27 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/13 12:31:13 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/03/13 10:58:38 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/03/13 12:47:15 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
-
 #include <iostream>
-#include <fstream>
-#include <cstdlib>
+#include <string>
 
-#endif
+class Harl
+{
+public:
+	Harl( void );
+	~Harl( void );
+	void	complain( std::string level );
+private:
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+};
+

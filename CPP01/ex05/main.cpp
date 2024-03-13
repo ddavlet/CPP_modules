@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 20:57:27 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/13 12:31:13 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/03/13 11:23:30 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/03/13 12:47:38 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <fstream>
-#include <cstdlib>
+int	main (void)
+{
+	Harl harl;
 
-#endif
+	std::cout << "DEBUG:" << std::endl;
+	harl.complain("debug");
+	std::cout << "\nINFO:" << std::endl;
+	harl.complain("info");
+	std::cout << "\nWARNING:" << std::endl;
+	harl.complain("warning");
+	std::cout << "\nERROR:" << std::endl;
+	harl.complain("error");
+	std::cout << "\nNOTFOUND:" << std::endl;
+	harl.complain("nothing");
+}
