@@ -1,6 +1,6 @@
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98 -g
-TARGET := ./ex01
+TARGET := ./ex03
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
