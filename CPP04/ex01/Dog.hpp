@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:46:56 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 22:56:01 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/22 23:11:52 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 # include "Animal.hpp"
+# include "Brain.hpp"
 
-class Cat : public Animal {
+class Dog : public Animal {
 public:
-	Cat();
-	~Cat();
+	Dog();
+	~Dog();
 	void	makeSound() const;
 	std::string	getType() const;
 
 private:
-
+	Brain*	brain;
 };
 #endif
