@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 15:48:13 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/15 16:54:03 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:35:53 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap (name)
 {
+	this->setEp(50);
+	this->setAd(20);
 	std::cout << "\033[1;32m" << "New non-agressive ScavTrap joined" << "\033[0m" << std::endl;
 }
 
@@ -26,7 +28,7 @@ void	ScavTrap::guardGate()
 {
 	std::cout << "\033[1;32m" << "ScavTrap";
 	std::cout << this->getName();
-	std::cout << "is now in Gate keeper mode" << "\033[0m" << std::endl;
+	std::cout << " is now in Gate keeper mode" << "\033[0m" << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target)

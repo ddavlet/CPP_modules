@@ -1,10 +1,10 @@
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98 -g
-TARGET := ./ex03
+TARGET := ./ex02
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
-SOURCE := main.cpp ClapTrap.cpp ScavTrap.cpp
+SOURCE := main.cpp ClapTrap.cpp FragTrap.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
 

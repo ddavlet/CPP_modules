@@ -5,18 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 17:39:13 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/18 10:28:21 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/04/19 16:04:32 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/04/22 14:35:20 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
-{
+class FragTrap : public ClapTrap {
 public:
 	FragTrap(std::string Name);
-	~FragTrap();
+	 ~FragTrap();
+
+	void	highFivesGuys(void);
+
 private:
-	/* data */
+
+
 };
+#endif

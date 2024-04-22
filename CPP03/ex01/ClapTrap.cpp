@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:52:41 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/15 16:39:50 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:35:45 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap()
 {
 }
 
-ClapTrap::ClapTrap(std::string name) : _Name(name), _Hp(10), _Ep(10), _Ad(0)
+ClapTrap::ClapTrap(std::string name) : _Name(name), _Hp(100), _Ep(10), _Ad(0)
 {
 	std::cout << "New agressive ClapTrap joined" << std::endl;
 }
