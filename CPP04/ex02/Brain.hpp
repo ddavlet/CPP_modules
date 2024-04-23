@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 18:46:56 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 16:36:50 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/04/22 22:52:11 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/04/23 16:38:27 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
+# include <iostream>
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
-
-class Cat : public Animal {
+class Brain {
 public:
-	Cat();
-	~Cat();
-	void	makeSound() const;
+	Brain();
+	Brain(const Brain& src);
+	~Brain();
+	Brain& operator=(const Brain& src);
 
 private:
-
+	std::string	ideas[100];
 };
 #endif

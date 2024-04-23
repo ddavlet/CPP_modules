@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 18:46:56 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 16:36:50 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/04/22 18:49:46 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/04/23 16:38:11 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Cat.hpp"
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
+Cat::Cat() : brain(new Brain()) {
+	type = "Cat";
+	std::cout << "Cat object has been created" << std::endl;
+}
 
-class Cat : public Animal {
-public:
-	Cat();
-	~Cat();
-	void	makeSound() const;
+Cat::~Cat() {
+	delete (brain);
+	std::cout << "Cat object has been destroyed" << std::endl;
+}
 
-private:
-
-};
-#endif
+void	Cat::makeSound() const {
+	std::cout << "meow..." << std::endl;
+}

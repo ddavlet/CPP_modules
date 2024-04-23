@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:46:56 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 22:55:59 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:36:45 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ public:
 	Dog();
 	~Dog();
 	void	makeSound() const;
-	std::string	getType() const;
 
 private:
 

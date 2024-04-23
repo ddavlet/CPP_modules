@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:38:09 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 23:34:38 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:37:56 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int main()
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
-	std::cout << cat.test() << " " << std::endl;
-	// std::cout << dog.brain->ideas[0] << std::endl;
 
 	delete (meta);
 	delete (j);

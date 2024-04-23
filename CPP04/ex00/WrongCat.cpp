@@ -20,8 +20,3 @@ WrongCat::WrongCat() {
 WrongCat::~WrongCat() {
 	std::cout << "WrongCat object has been destroyed" << std::endl;
 }
-
-
-std::string	WrongCat::getType() const {
-	return type;
-}

@@ -19,7 +19,6 @@ class WrongCat : public WrongAnimal {
 public:
 	WrongCat();
 	~WrongCat();
-	std::string	getType() const;
 
 private:
 

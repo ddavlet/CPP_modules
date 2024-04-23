@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:39:39 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 23:13:02 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:34:55 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void	Animal::makeSound() const {
 }
 
 std::string	Animal::getType() const {
-	return this->type;
+	return type;
 }

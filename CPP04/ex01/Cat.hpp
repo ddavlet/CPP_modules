@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:46:56 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 23:32:01 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:37:36 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ public:
 	Cat();
 	~Cat();
 	void	makeSound() const;
-	std::string	getType() const;
-	std::string	test() const;
 
 private:
 	Brain*	brain;

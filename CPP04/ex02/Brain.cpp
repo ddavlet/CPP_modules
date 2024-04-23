@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 18:46:56 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 16:36:50 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/04/22 22:54:09 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/04/23 16:38:31 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
+Brain::Brain() {
+	std::cout << "Brain is constructed" << std::endl;
+}
+Brain::~Brain() {
+	std::cout << "Brain is destructed" << std::endl;
+}
 
-class Cat : public Animal {
-public:
-	Cat();
-	~Cat();
-	void	makeSound() const;
+Brain::Brain(const Brain& src) {
+	std::copy(src.ideas, src.ideas + 100, ideas);
+}
 
-private:
-
-};
-#endif
+Brain&	Brain::operator=(const Brain& src) {
+	if (this != &src)
+		std::copy(src.ideas, src.ideas + 100, ideas);
+	return *this;
+}

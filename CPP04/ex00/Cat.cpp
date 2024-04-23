@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:49:46 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 22:26:42 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:36:54 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,4 @@ Cat::~Cat() {
 
 void	Cat::makeSound() const {
 	std::cout << "meow..." << std::endl;
-}
-
-std::string	Cat::getType() const {
-	return type;
 }

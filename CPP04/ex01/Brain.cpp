@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 22:54:09 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 23:35:41 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:03:31 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Brain&	Brain::operator=(const Brain& src) {
 	return *this;
 }
 
-std::string	Brain::first_idea() {
-	ideas[0] = "first_idea";
-	return ideas[0];
-}
+// std::string	Brain::first_idea() {
+// 	ideas[0] = "first_idea";
+// 	return ideas[0];
+// }

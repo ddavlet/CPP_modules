@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:52:28 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 22:29:02 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:36:44 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ Dog::~Dog() {
 }
 
 void	Dog::makeSound() const {
-	std::cout << "bark..." << std::endl;
+	std::cout << "woof..." << std::endl;
 }
 
-std::string	Dog::getType() const {
-	return type;
-}

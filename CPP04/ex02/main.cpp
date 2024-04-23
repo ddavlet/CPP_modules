@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 18:46:56 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 16:36:50 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/04/22 18:38:09 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/04/23 16:38:45 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include "Animal.hpp"
+int main()
+{
+	// const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-class Cat : public Animal {
-public:
-	Cat();
-	~Cat();
-	void	makeSound() const;
+	Dog dog;
+	Cat cat;
 
-private:
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	i->makeSound();
+	j->makeSound();
+	// meta->makeSound();
 
-};
-#endif
+	// delete (meta);
+	delete (j);
+	delete (i);
+
+	return 0;
+}
