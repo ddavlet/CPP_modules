@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 16:42:30 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 17:45:05 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/04/23 17:33:46 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/04/23 17:47:05 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#include "Ice.hpp"
 
-# include <iostream>
+Ice::Ice () : AMateria("Ice") {
+}
 
-class ICharacter;
+Ice::~Ice () {
+}
 
-class AMateria
-{
-	protected:
-		std::string	type;
-	public:
-		AMateria();
-		AMateria(std::string const & type);
-		const AMateria& operator=(const AMateria& src);
-		std::string const& getType() const;
-		virtual ~AMateria();
-		virtual AMateria* clone() const = 0;
-		virtual void	use(ICharacter&) = 0;
-};
+AMateria* Ice::clone() const {
+	return (new Ice());
+}
 
-#endif
+void	Ice::use(ICharacter&) {
+	std::cout << "* shoots an ice bolt at ";
+	// std::cout << character.;
+	std::cout << " *" << std::endl;
+}
