@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 17:33:46 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 21:09:49 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/04/23 17:31:27 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/04/23 17:40:25 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#ifndef CURE_HPP
+# define CURE_HPP
 
-Ice::Ice () : AMateria("ice") {
-	std::cout << "Ice constructor" << std::endl;
-}
+#include "AMateria.hpp"
 
-Ice::~Ice () {
-	std::cout << "Ice destructor" << std::endl;
-}
+class Cure : public AMateria
+{
+public:
+	Cure();
+	~Cure();
+	AMateria* clone() const;
+	void	use(ICharacter&);
+private:
 
-AMateria* Ice::clone() const {
-	return (new Ice());
-}
+};
 
-void	Ice::use(ICharacter& ch) {
-	std::cout << "* shoots an ice bolt at ";
-	std::cout << ch.getName();
-	std::cout << " *" << std::endl;
-}
+#endif

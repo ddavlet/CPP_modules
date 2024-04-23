@@ -4,7 +4,7 @@ TARGET := ./ex03
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
-SOURCE := main.cpp AMateria.cpp Ice.cpp
+SOURCE := main.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
 

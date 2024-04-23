@@ -6,13 +6,18 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:48:45 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 17:29:51 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/23 20:31:27 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 AMateria::AMateria () {
+	std::cout << "AMateria default constructor" << std::endl;
+}
+
+AMateria::AMateria (const AMateria& src) {
+	type = src.type;
 	std::cout << "AMateria default constructor" << std::endl;
 }
 
@@ -24,14 +29,13 @@ AMateria::~AMateria () {
 	std::cout << "AMateria destructor" << std::endl;
 }
 
-const AMateria& AMateria::operator=(const AMateria& src) {
-	if (this == &src)
-		return *this;
-	else
+AMateria& AMateria::operator=(const AMateria& src) {
+	if (this != &src)
 	{
 		delete (this);
-		return src;
+		*this = src;
 	}
+	return *this;
 }
 
 std::string const& AMateria::getType() const {

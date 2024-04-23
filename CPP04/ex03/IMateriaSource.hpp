@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 17:33:46 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 21:09:49 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/04/23 18:40:01 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/04/23 18:54:29 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "AMateria.hpp"
 
-Ice::Ice () : AMateria("ice") {
-	std::cout << "Ice constructor" << std::endl;
-}
-
-Ice::~Ice () {
-	std::cout << "Ice destructor" << std::endl;
-}
-
-AMateria* Ice::clone() const {
-	return (new Ice());
-}
-
-void	Ice::use(ICharacter& ch) {
-	std::cout << "* shoots an ice bolt at ";
-	std::cout << ch.getName();
-	std::cout << " *" << std::endl;
-}
+class IMateriaSource
+{
+	public:
+	virtual ~IMateriaSource() {}
+	virtual void learnMateria(AMateria*) = 0;
+	virtual AMateria* createMateria(std::string const & type) = 0;
+};

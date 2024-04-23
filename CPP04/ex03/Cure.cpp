@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:33:46 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 21:09:49 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/23 19:20:17 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Cure.hpp"
 
-Ice::Ice () : AMateria("ice") {
-	std::cout << "Ice constructor" << std::endl;
+Cure::Cure () : AMateria("cure") {
+	std::cout << "Cure constructor" << std::endl;
 }
 
-Ice::~Ice () {
-	std::cout << "Ice destructor" << std::endl;
+Cure::~Cure () {
+	std::cout << "Cure destructor" << std::endl;
 }
 
-AMateria* Ice::clone() const {
-	return (new Ice());
+AMateria* Cure::clone() const {
+	return (new Cure());
 }
 
-void	Ice::use(ICharacter& ch) {
-	std::cout << "* shoots an ice bolt at ";
+void	Cure::use(ICharacter& ch) {
+	std::cout << "* heals ";
 	std::cout << ch.getName();
-	std::cout << " *" << std::endl;
+	std::cout << "’s wounds *" << std::endl;
 }

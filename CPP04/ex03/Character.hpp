@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 17:33:46 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 21:09:49 by ddavlety         ###   ########.fr       */
+/*   Created: 2024/04/23 20:45:31 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/04/23 20:53:57 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-Ice::Ice () : AMateria("ice") {
-	std::cout << "Ice constructor" << std::endl;
-}
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-Ice::~Ice () {
-	std::cout << "Ice destructor" << std::endl;
-}
+class Character : public ICharacter
+{
+	public:
+		Character();
+		Character(const Character&);
+		Character& operator=(const Character&);
+		~Character() {}
+		std::string const & getName() const;
+		void equip(AMateria*);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
+};
 
-AMateria* Ice::clone() const {
-	return (new Ice());
-}
-
-void	Ice::use(ICharacter& ch) {
-	std::cout << "* shoots an ice bolt at ";
-	std::cout << ch.getName();
-	std::cout << " *" << std::endl;
-}
+#endif
