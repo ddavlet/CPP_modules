@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:30:04 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/24 10:54:19 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:17:05 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int main (void) {
 	character.equip(tmp);
 	tmp = mat_source.createMateria("cure");
 	character.equip(tmp);
-	delete(tmp);
+	delete tmp;
 	character.use(0, character2);
 	character2 = character;
 	tmp = mat_source.createMateria("cure");
