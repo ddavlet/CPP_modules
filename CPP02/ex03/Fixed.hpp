@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:30:41 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/15 12:34:32 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/03/15 10:36:23 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,25 @@ public:
 	void		setRawBits( int const raw );
 	float		toFloat(void) const;
 	int			toInt(void) const;
+	bool		operator>(const Fixed& obj);
+	bool		operator<(const Fixed& obj);
+	bool		operator>=(const Fixed& obj);
+	bool		operator<=(const Fixed& obj);
+	bool		operator==(const Fixed& obj);
+	bool		operator!=(const Fixed& obj);
+	Fixed		operator+(const Fixed& obj);
+	Fixed		operator-(const Fixed& obj);
+	Fixed		operator*(const Fixed& obj);
+	Fixed		operator/(const Fixed& obj);
+	Fixed&		operator++(void);
+	Fixed&		operator--(void);
+	Fixed		operator++(int);
+	Fixed		operator--(int);
+	static const Fixed& min(Fixed& obj_1, Fixed& obj_2);
+	static const Fixed& min(const Fixed& obj_1, const Fixed& obj_2);
+	static const Fixed& max(Fixed& obj_1, Fixed& obj_2);
+	static const Fixed& max(const Fixed& obj_1, const Fixed& obj_2);
+
 private:
 	int	_rawValue;
 	static const int _Fractionalbits = 8;

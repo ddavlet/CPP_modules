@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:30:41 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/14 13:22:33 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:33:19 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ private:
 	int	_rawValue;
 	static const int _Fractionalbits = 8;
 };
+
+// std::ostream &	operator<<(std::ostream &o, Fixed const & );
 
 #endif

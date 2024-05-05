@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:30:53 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/15 10:53:08 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:12:50 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,9 +142,9 @@ Fixed&	Fixed::operator--()
 
 Fixed	Fixed::operator++(int)
 {
-	Fixed new_F(this->toFloat());
+	Fixed tmp(*this);
 	this->_rawValue++;
-	return new_F;
+	return tmp;
 }
 
 Fixed	Fixed::operator--(int)

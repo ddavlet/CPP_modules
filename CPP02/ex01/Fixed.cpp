@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:30:53 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/14 14:41:04 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:37:20 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Fixed::Fixed(const Fixed& obj)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = obj;
+	return ;
 }
 
 Fixed::Fixed(const int integer)
