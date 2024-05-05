@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:07:36 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/12 20:50:43 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/04 17:55:15 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ int main()
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
+	}
+	/*initial value of reference to non-const must be an lvalue*/
+	{
+		HumanB josh("JOSH");
+		// josh.setWeapon(new Weapon("crude spiked club"));
 	}
 	return (0);
 }

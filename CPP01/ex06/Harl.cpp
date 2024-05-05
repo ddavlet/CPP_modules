@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:00:06 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/13 14:50:50 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:03:31 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	Harl::complain(std::string	level)
 		i++;
 	if (i == 4)
 	{
-		std::cout << "Level " << level << " not found" << std::endl;
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		return ;
 	}
 	(this->*(types[i]))();

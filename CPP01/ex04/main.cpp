@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 20:58:27 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/13 12:30:43 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/04 17:57:59 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string	read_file(std::string *str,const std::string& file_name)
 
 	std::ifstream file(file_name.c_str());
 	if (!file.is_open()) {
-		std::cout << "Error: file not found" << std::endl;
+		std::cout << "Error: file not found or cannot not be opened" << std::endl;
 		exit (1);
 	} else {
 		while (std::getline(file, line)) {

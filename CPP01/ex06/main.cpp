@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:23:30 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/13 14:53:02 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/05 13:03:02 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,20 @@ int	main (int argc, char **argv)
 	int	i = 0;
 	while (levels[i] != std::string(argv[1]) && i != 4)
 		i++;
-	if (i == 4)
+	switch (i)
 	{
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return 0;
+	case 0:
+		harl.complain(levels[0]);
+	case 1:
+		harl.complain(levels[1]);
+	case 2:
+		harl.complain(levels[2]);
+	case 3:
+		harl.complain(levels[3]);
+		break;
+	default:
+		harl.complain("other");
+		break;
 	}
-	while (i < 4)
-		harl.complain(levels[i++]);
 	return 0;
 }
