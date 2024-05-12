@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:37:33 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/12 10:43:09 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 11:57:46 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	private:
 		std::string	_Name;
 };
+
+std::ostream&	operator<<(std::ostream& os, const DiamondTrap& fixed);
+
 #endif

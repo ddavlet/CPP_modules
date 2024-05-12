@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:37:36 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/12 11:48:07 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 12:04:31 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,13 @@ void	DiamondTrap::whoAmI()
 {
 	std::cout << "\033[1;33m" << "My name is: " << this->_Name << "\033[0m" << std::endl;
 	std::cout << "\033[1;33m" << "My father's name is: " << this->getName() << "\033[0m" << std::endl;
+}
+
+std::ostream& operator<<(std::ostream& os, const DiamondTrap& obj)
+{
+	os << "ClapTraps name: " << obj.getName() << std::endl;
+	os << "Health points: " << obj.getHp() << std::endl;
+	os << "Energy points: " << obj.getEp() << std::endl;
+	os << "Attack damage: " << obj.getAd() << std::endl;
+	return os;
 }
