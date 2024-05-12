@@ -6,14 +6,17 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 15:48:13 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/19 16:35:53 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 08:48:25 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() : ClapTrap() {}
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap (name)
 {
+	this->setHp(100);
 	this->setEp(50);
 	this->setAd(20);
 	std::cout << "\033[1;32m" << "New non-agressive ScavTrap joined" << "\033[0m" << std::endl;
@@ -23,6 +26,8 @@ ScavTrap::~ScavTrap()
 {
 	std::cout << "\033[1;32m" << "Non-agressive ScavTrap left" << "\033[0m" << std::endl;
 }
+
+
 
 void	ScavTrap::guardGate()
 {
