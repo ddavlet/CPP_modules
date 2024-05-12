@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:48:45 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 20:31:27 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 08:59:50 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ AMateria::AMateria () {
 }
 
 AMateria::AMateria (const AMateria& src) {
-	type = src.type;
+	if (this != &src)
+		type = src.type;
 	std::cout << "AMateria default constructor" << std::endl;
 }
 

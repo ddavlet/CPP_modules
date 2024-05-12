@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:04:32 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 14:35:20 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 09:10:11 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@
 
 class FragTrap : public ClapTrap {
 public:
+	FragTrap();
+	~FragTrap();
+	FragTrap(const FragTrap& src);
+	FragTrap& operator=(const FragTrap& src);
 	FragTrap(std::string Name);
-	 ~FragTrap();
+
 
 	void	highFivesGuys(void);
 

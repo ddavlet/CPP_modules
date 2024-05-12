@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 15:04:30 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 18:22:13 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 09:59:48 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int main ()
 	std::cout << p1.getEp() << std::endl;
 	std::cout << p1.getAd() << std::endl;
 	p1.attack("Other server");
-	p1.beRepaired(2);
-	p1.takeDamage(3);
+	p1.FragTrap::beRepaired(2);
+	p1.FragTrap::takeDamage(3);
 	p1.highFivesGuys();
 	p1.whoAmI();
 	std::cout << p1.getHp() << std::endl;

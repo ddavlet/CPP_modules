@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 12:41:19 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/03/15 16:39:31 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 08:58:37 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class ClapTrap {
 public:
 	ClapTrap(const std::string name);
 	ClapTrap(const ClapTrap& src);
-	virtual ~ClapTrap();
 	ClapTrap& operator=(const ClapTrap& rhs);
+	virtual ~ClapTrap();
 
 	virtual void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);

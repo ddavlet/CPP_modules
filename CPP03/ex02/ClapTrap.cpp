@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:52:41 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/22 14:35:09 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 09:00:43 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap()
 {
 }
 
-ClapTrap::ClapTrap(std::string name) : _Name(name), _Hp(100), _Ep(10), _Ad(0)
+ClapTrap::ClapTrap(std::string name) : _Name(name), _Hp(10), _Ep(10), _Ad(0)
 {
 	std::cout << "New agressive ClapTrap joined" << std::endl;
 }
@@ -25,8 +25,11 @@ ClapTrap::~ClapTrap()
 	std::cout << "One agressive ClapTrap left" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& src) : _Name(src._Name)
+ClapTrap::ClapTrap(const ClapTrap& src)
 {
+	if (this != &src)
+		*this = src;
+	return ;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& src)
@@ -62,7 +65,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		real_dmg = this->getHp();
 	this->setHp(this->getHp() - real_dmg);
 	std::cout << "A wild bug appeared and bit ClapTrap ";
-	std::cout << this->_Name;
+	std::cout << this->getName();
 	std::cout << " for ";
 	std::cout << amount;
 	std::cout << " damage! Gotta catch 'em all!" << std::endl;
@@ -75,7 +78,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	this->setHp(this->getHp() + amount);
 	this->setEp(this->getEp() - 1);
 	std::cout << "ClapTrap ";
-	std::cout << this->_Name;
+	std::cout << this->getName();
 	std::cout << " found a debugging tool and feels ";
 	std::cout << amount;
 	std::cout << " times better! It's super effective!" << std::endl;

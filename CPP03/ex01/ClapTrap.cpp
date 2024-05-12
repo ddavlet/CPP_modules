@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:52:41 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/12 08:50:44 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 09:00:43 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ ClapTrap::~ClapTrap()
 	std::cout << "One agressive ClapTrap left" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& src) : _Name(src.getName())
+ClapTrap::ClapTrap(const ClapTrap& src)
 {
 	if (this != &src)
 		*this = src;
-	return *this;
+	return ;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& src)
