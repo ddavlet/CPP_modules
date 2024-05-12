@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:37:33 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/12 09:58:45 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/05/12 10:43:09 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,15 @@ class DiamondTrap : public ScavTrap, public FragTrap
 
 		void	whoAmI();
 
-		unsigned int	getHp() const;
-		unsigned int	getEp() const;
-		unsigned int	getAd() const;
-		std::string		getName() const;
-
 		using	ScavTrap::attack;
+		using	FragTrap::getHp;
+		using	ScavTrap::getEp;
+		using	FragTrap::getAd;
 	protected:
-		void	setHp(unsigned int Hp);
-		void	setEp(unsigned int Ep);
-		void	setAd(unsigned int Ad);
+		using	FragTrap::setHp;
+		using	FragTrap::setEp;
+		using	FragTrap::setAd;
 	private:
-		std::string	_name;
+		std::string	_Name;
 };
 #endif
