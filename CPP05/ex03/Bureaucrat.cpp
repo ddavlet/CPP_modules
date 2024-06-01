@@ -84,7 +84,7 @@ void Bureaucrat::down_grade(int val)
 	_grade += val;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(AForm& form)
 {
 	try
 	{
@@ -98,10 +98,23 @@ void Bureaucrat::signForm(Form& form)
 	}
 }
 
+void Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout <<  getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << "Caught exeption :" << e.what() << std::endl;
+	}
+}
+
 // Stream operators
 std::ostream & operator<<(std::ostream &stream, const Bureaucrat &object)
 {
 	stream << "Bureaucrat :" << object.getName() << std::endl;
-	stream << ", Bureaucrat grade :" << object.getGrade() << std::endl;
+	stream << ", Bureaucrat grade :" << object.getGrade();
 	return stream;
 }

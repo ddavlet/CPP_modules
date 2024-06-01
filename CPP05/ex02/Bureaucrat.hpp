@@ -3,9 +3,9 @@
 
 # include <iostream>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -29,7 +29,8 @@ class Bureaucrat
 
 		void up_grade(int val);
 		void down_grade(int val);
-		void signForm(Form &form);
+		void signForm(AForm &form);
+		void executeForm(AForm const & form);
 	private:
 		const std::string _name;
 		int _grade;

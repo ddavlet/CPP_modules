@@ -12,9 +12,9 @@ Form::Form(const Form &copy) : _name(copy.getName()), _grade_to_exe(copy.getGrad
 	std::cout << "\e[0;33mCopy Constructor called of Form\e[0m" << std::endl;
 }
 
-Form::Form(const std::string name, bool sign, const int grade_to_sign, const int grade_to_exe) : _name(name), _grade_to_exe(grade_to_exe), _grade_to_sign(grade_to_sign)
+Form::Form(const std::string name, const int grade_to_sign, const int grade_to_exe) : _name(name), _grade_to_exe(grade_to_exe), _grade_to_sign(grade_to_sign)
 {
-	_signed = sign;
+	_signed = false;
 	std::cout << "\e[0;33mFields Constructor called of Form\e[0m" << std::endl;
 }
 
@@ -45,12 +45,12 @@ bool Form::getSigned() const
 	return _signed;
 }
 
-const int Form::getGrade_to_sign() const
+int Form::getGrade_to_sign() const
 {
 	return _grade_to_sign;
 }
 
-const int Form::getGrade_to_exe() const
+int Form::getGrade_to_exe() const
 {
 	return _grade_to_exe;
 }
@@ -65,10 +65,20 @@ const char * Form::GradeTooLowException::what() const throw()
 	return "Grade too low";
 }
 
+void Form::beSigned(const Bureaucrat& b)
+{
+	if (b.getGrade() <= _grade_to_sign && b.getGrade() <= _grade_to_exe)
+		_signed = true;
+	else
+		throw GradeTooLowException();
+}
 
 // Stream operators
 std::ostream & operator<<(std::ostream &stream, const Form &object)
 {
-	stream << "Form " << object.getName() << ": signed " << object.getSigned() << ", grade to sign " << object.getGrade_to_sign() << ", grade to execute " << object.getGrade_to_exe() << std::endl;
+	stream << "Form :" << object.getName() << std::endl;
+	stream << "signed :" << object.getSigned() << std::endl;
+	stream << "Grade to sign :" << object.getGrade_to_sign() << std::endl;
+	stream << "Grade to execute :" << object.getGrade_to_exe() << std::endl;
 	return stream;
 }

@@ -1,10 +1,11 @@
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98 -g -Wno-shadow
-TARGET := ./ex01
+TARGET := ./ex02
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
-SOURCE := main.cpp Form.cpp Bureaucrat.cpp
+SOURCE := main.cpp AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
 
