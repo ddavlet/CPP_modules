@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:37:33 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/12 11:57:46 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/06/01 22:38:03 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		using	FragTrap::getHp;
 		using	ScavTrap::getEp;
 		using	FragTrap::getAd;
-	protected:
-		using	FragTrap::setHp;
-		using	FragTrap::setEp;
-		using	FragTrap::setAd;
 	private:
 		std::string	_Name;
 };

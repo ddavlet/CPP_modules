@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 12:41:19 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/12 08:58:37 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/06/01 22:24:49 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class ClapTrap {
 public:
+	ClapTrap();
 	ClapTrap(const std::string name);
 	ClapTrap(const ClapTrap& src);
 	ClapTrap& operator=(const ClapTrap& rhs);
@@ -29,12 +30,6 @@ public:
 	unsigned int	getHp() const;
 	unsigned int	getEp() const;
 	unsigned int	getAd() const;
-protected:
-	ClapTrap();
-	void			setName(std::string);
-	void			setHp(unsigned int Hp);
-	void			setEp(unsigned int Ep);
-	void			setAd(unsigned int Ad);
 private:
 	std::string		_Name;
 	unsigned int	_Hp;

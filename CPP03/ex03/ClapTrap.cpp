@@ -6,15 +6,15 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:52:41 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/12 10:42:48 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/06/01 22:27:16 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() : _Hp(10), _Ep(10), _Ad(0)
 {
-	std::cout << "New agressive ClapTrap joined" << std::endl;
+	std::cout << "New default agressive ClapTrap joined" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _Name(name), _Hp(10), _Ep(10), _Ad(0)
@@ -37,10 +37,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 {
 	if (this != &src)
 	{
-		this->setName(src.getName());
-		this->setHp(src.getHp());
-		this->setEp(src.getEp());
-		this->setAd(src.getAd());
+		this->_Name = src.getName();
+		this->_Hp = src.getHp();
+		this->_Ep = src.getEp();
+		this->_Ad = src.getAd();
 	}
 	return *this;
 }
@@ -48,7 +48,7 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (!this->getEp() || !this->getHp())
 		return ;
-	this->setEp(this->getEp() - 1);
+	this->_Ep = this->getEp() - 1;
 	std::cout << "ClapTrap ";
 	std::cout << this->getName();
 	std::cout << " throws a stack overflow error at ";
@@ -64,7 +64,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		return ;
 	if (amount > this->getHp())
 		real_dmg = this->getHp();
-	this->setHp(this->getHp() - real_dmg);
+	this->_Hp = this->getHp() - real_dmg;
 	std::cout << "A wild bug appeared and bit ClapTrap ";
 	std::cout << this->getName();
 	std::cout << " for ";
@@ -76,8 +76,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->getEp() || !this->getHp())
 		return ;
-	this->setHp(this->getHp() + amount);
-	this->setEp(this->getEp() - 1);
+	this->_Hp = this->getHp() + amount;
+	this->_Ep = this->getEp() - 1;
 	std::cout << "ClapTrap ";
 	std::cout << this->getName();
 	std::cout << " found a debugging tool and feels ";
@@ -101,24 +101,4 @@ unsigned int	ClapTrap::getAd() const
 std::string	ClapTrap::getName() const
 {
 	return (this->_Name);
-}
-
-void	ClapTrap::setHp(unsigned int Hp)
-{
-	this->_Hp = Hp;
-}
-
-void	ClapTrap::setEp(unsigned int Ep)
-{
-	this->_Ep = Ep;
-}
-
-void	ClapTrap::setAd(unsigned int Ad)
-{
-	this->_Ad = Ad;
-}
-
-void	ClapTrap::setName(std::string Name)
-{
-	this->_Name = Name;
 }
