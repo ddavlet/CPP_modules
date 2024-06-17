@@ -4,7 +4,7 @@
 Bureaucrat::Bureaucrat() : _name("")
 {
 	_grade = 0;
-	std::cout << "\e[0;33mDefault Constructor called of Bureaucrat\e[0m" << std::endl;
+	std::cout << "\e[0;31mDefault Constructor called of Bureaucrat\e[0m" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName())
@@ -14,7 +14,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName())
 	if (copy.getGrade() > 150)
 		throw GradeTooLowException();
 	_grade = copy.getGrade();
-	std::cout << "\e[0;33mCopy Constructor called of Bureaucrat\e[0m" << std::endl;
+	std::cout << "\e[0;31mCopy Constructor called of Bureaucrat\e[0m" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
@@ -24,7 +24,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 	if (grade > 150)
 		throw GradeTooLowException();
 	_grade = grade;
-	std::cout << "\e[0;33mFields Constructor called of Bureaucrat\e[0m" << std::endl;
+	std::cout << "\e[0;31mFields Constructor called of Bureaucrat\e[0m" << std::endl;
 }
 
 
@@ -72,7 +72,7 @@ void Bureaucrat::up_grade(int val)
 {
 	if (_grade - val < 1)
 		throw GradeTooHighException();
-	std::cout << "\e[0;30mUpgrade is called\e[0m" << std::endl;
+	std::cout << "\e[0;31mUpgrade is called\e[0m" << std::endl;
 	_grade -= val;
 }
 
@@ -80,7 +80,7 @@ void Bureaucrat::down_grade(int val)
 {
 	if (_grade + val > 150)
 		throw GradeTooLowException();
-	std::cout << "\e[0;30mDowngrade is called\e[0m" << std::endl;
+	std::cout << "\e[0;31mDowngrade is called\e[0m" << std::endl;
 	_grade += val;
 }
 

@@ -4,25 +4,25 @@
 AForm::AForm() : _name(""), _grade_to_sign(0), _grade_to_exe(0)
 {
 	_signed = false;
-	std::cout << "\e[0;33mDefault Constructor called of AForm\e[0m" << std::endl;
+	std::cout << "\e[0;32mDefault Constructor called of AForm\e[0m" << std::endl;
 }
 AForm::AForm(const AForm &copy) : _name(copy.getName()),  _grade_to_sign(copy.getGrade_to_exe()), _grade_to_exe(copy.getGrade_to_sign())
 {
 	_signed = copy.getSigned();
-	std::cout << "\e[0;33mCopy Constructor called of AForm\e[0m" << std::endl;
+	std::cout << "\e[0;32mCopy Constructor called of AForm\e[0m" << std::endl;
 }
 
 AForm::AForm(const std::string name, const int grade_to_sign, const int grade_to_exe) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_exe(grade_to_exe)
 {
 	_signed = false;
-	std::cout << "\e[0;33mFields Constructor called of AForm\e[0m" << std::endl;
+	std::cout << "\e[0;32mFields Constructor called of AForm\e[0m" << std::endl;
 }
 
 
 // Destructor
 AForm::~AForm()
 {
-	std::cout << "\e[0;31mDestructor called of AForm\e[0m" << std::endl;
+	std::cout << "\e[0;32mDestructor called of AForm\e[0m" << std::endl;
 }
 
 

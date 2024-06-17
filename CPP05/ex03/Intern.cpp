@@ -16,7 +16,7 @@ Intern::Intern(const Intern &copy)
 // Destructor
 Intern::~Intern()
 {
-	std::cout << "\e[0;31mDestructor called of Intern\e[0m" << std::endl;
+	std::cout << "\e[0;33mDestructor called of Intern\e[0m" << std::endl;
 }
 
 
@@ -51,7 +51,7 @@ AForm* Intern::makeForm(std::string name, std::string target)
 		break;
 	default:
 		std::cout << "Form with such name does not exists" << std::endl;
-		return nullptr;
+		return NULL;
 	}
 	std::cout << "Intern creates " << form->getName() << std::endl;
 	return form;
