@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:04:32 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/12 09:10:11 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/06/04 11:00:41 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ public:
 	FragTrap& operator=(const FragTrap& src);
 	FragTrap(std::string Name);
 
-
 	void	highFivesGuys(void);
-
 private:
 
 
