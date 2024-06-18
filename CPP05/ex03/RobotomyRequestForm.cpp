@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 52), _target("default_taget")
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), _target("default_taget")
 {
 	std::cout << "\e[0;35mDefault Constructor called of RobotomyRequestForm\e[0m" << std::endl;
 }
