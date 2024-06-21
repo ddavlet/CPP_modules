@@ -11,6 +11,8 @@ int main() {
 		PresidentialPardonForm ppf1("Home");
 		RobotomyRequestForm rrf1("Home");
 		ShrubberyCreationForm scf("Home");
+        b1.up_grade(1);
+
 		ppf1.execute(b1);
 		rrf1.execute(b1);
 		scf.execute(b1);

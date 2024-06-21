@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:36:30 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/30 19:11:20 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/06/20 00:49:56 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 class ShrubberyCreationForm: public AForm
 {
-	private:
-		std::string	_target;
 	public:
 		//constuct/destruct
 		ShrubberyCreationForm();
@@ -32,6 +30,9 @@ class ShrubberyCreationForm: public AForm
 		const std::string& getTarget() const;
 
 		void	execute(const Bureaucrat& executor) const;
+    private:
+		std::string	_target;
+        void draw_asciitree() const;
 };
 
 #endif

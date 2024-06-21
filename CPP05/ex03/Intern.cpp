@@ -27,32 +27,41 @@ Intern & Intern::operator=(const Intern &assign)
 	return *this;
 }
 
+const char *Intern::WrongFormNameException::what() const {
+    return "Wrong name of the form";
+}
+
+static AForm	*new_robotomy(std::string target)
+{
+	AForm	*robo = new RobotomyRequestForm(target);
+	return (robo);
+}
+
+static AForm	*new_president(std::string target)
+{
+	AForm	*president = new PresidentialPardonForm(target);
+	return (president);
+}
+
+static AForm	*new_shrubbery(std::string target)
+{
+	AForm	*shrub = new ShrubberyCreationForm(target);
+	return (shrub);
+}
+
 AForm* Intern::makeForm(std::string name, std::string target)
 {
 	int i = 0;
 	AForm* form;
-
-	std::string matches[4] = {"presidential request", "robotomy request", "shrubbery request"};
+    AForm* (*form_maker[3])(std::string) = {new_president, new_robotomy, new_shrubbery};
+	std::string matches[3] = {"presidential request", "robotomy request", "shrubbery request"};
 	for (i = 0; i < 4; i++)
 	{
 		if (matches[i] == name)
-			break;
+			form = form_maker[i](target);
 	}
-	switch (i)
-	{
-	case 0:
-		form = new PresidentialPardonForm(target);
-		break;
-	case 1:
-		form = new RobotomyRequestForm(target);
-		break;
-	case 2:
-		form = new ShrubberyCreationForm(target);
-		break;
-	default:
-		std::cout << "Form with such name does not exists" << std::endl;
-		return NULL;
-	}
-	std::cout << "Intern creates " << form->getName() << std::endl;
-	return form;
+    if (form)
+        return form;
+    else
+        throw WrongFormNameException();
 }

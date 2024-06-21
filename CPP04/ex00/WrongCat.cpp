@@ -20,3 +20,11 @@ WrongCat::WrongCat() {
 WrongCat::~WrongCat() {
 	std::cout << "WrongCat object has been destroyed" << std::endl;
 }
+
+WrongCat::WrongCat(const WrongCat& src) {
+
+}
+
+WrongCat& WrongCat::operator=(const WrongCat& src) {
+
+}

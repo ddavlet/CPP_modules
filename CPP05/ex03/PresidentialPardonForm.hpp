@@ -17,8 +17,6 @@
 
 class PresidentialPardonForm: public AForm
 {
-	private:
-		std::string	_target;
 	public:
 		//constuct/destruct
 		PresidentialPardonForm();
@@ -32,6 +30,8 @@ class PresidentialPardonForm: public AForm
 
 		// inherited function
 		void execute(const Bureaucrat& executor) const;
+	private:
+		std::string	_target;
 };
 
 #endif

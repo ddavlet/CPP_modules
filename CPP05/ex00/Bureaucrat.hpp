@@ -7,7 +7,6 @@
 class Bureaucrat
 {
 	public:
-		Bureaucrat();
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat(std::string name, int grade);
 		~Bureaucrat();
@@ -29,6 +28,7 @@ class Bureaucrat
 	private:
 		const std::string _name;
 		int _grade;
+        Bureaucrat();
 };
 
 std::ostream & operator<<(std::ostream &stream, const Bureaucrat &object);

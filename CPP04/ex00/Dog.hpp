@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:46:56 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 16:36:45 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/06/18 21:04:44 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ class Dog : public Animal {
 public:
 	Dog();
 	~Dog();
+    Dog(const Dog& src);
+    Dog& operator=(const Dog& src);
 	void	makeSound() const;
 
 private:

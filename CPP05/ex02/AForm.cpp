@@ -1,11 +1,6 @@
 #include "AForm.hpp"
 
 // Constructors
-AForm::AForm() : _name(""), _grade_to_sign(0), _grade_to_exe(0)
-{
-	_signed = false;
-	std::cout << "\e[0;33mDefault Constructor called of AForm\e[0m" << std::endl;
-}
 AForm::AForm(const AForm &copy) : _name(copy.getName()),  _grade_to_sign(copy.getGrade_to_exe()), _grade_to_exe(copy.getGrade_to_sign())
 {
 	_signed = copy.getSigned();
@@ -22,16 +17,16 @@ AForm::AForm(const std::string name, const int grade_to_sign, const int grade_to
 // Destructor
 AForm::~AForm()
 {
-	std::cout << "\e[0;31mDestructor called of AForm\e[0m" << std::endl;
+	std::cout << "\e[0;33mDestructor called of AForm\e[0m" << std::endl;
 }
 
 
 // Operators
-AForm & AForm::operator=(const AForm &assign)
-{
-	_signed = assign.getSigned();
-	return *this;
-}
+// AForm & AForm::operator=(const AForm &assign)
+// {
+// 	_signed = assign.getSigned();
+// 	return *this;
+// }
 
 
 // Getters / Setters
@@ -65,9 +60,14 @@ const char * AForm::GradeTooLowException::what() const throw()
 	return "Grade too low";
 }
 
+const char * AForm::IsNotSignedException::what() const throw()
+{
+	return "Form is not signed";
+}
+
 void AForm::beSigned(const Bureaucrat& b)
 {
-	if (b.getGrade() <= _grade_to_sign && b.getGrade() <= _grade_to_exe)
+	if (b.getGrade() <= _grade_to_sign)
 		_signed = true;
 	else
 		throw GradeTooLowException();
@@ -75,10 +75,11 @@ void AForm::beSigned(const Bureaucrat& b)
 
 bool AForm::isValid(const Bureaucrat& b) const
 {
-	if (b.getGrade() <= _grade_to_sign && b.getGrade() <= _grade_to_exe)
-		return true;
-	else
-		return false;
+    if (b.getGrade() > _grade_to_exe)
+        throw GradeTooLowException();
+    if (!this->_signed)
+        throw IsNotSignedException();
+	return true;
 }
 
 // Stream operators

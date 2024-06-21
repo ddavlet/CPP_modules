@@ -18,8 +18,6 @@
 
 class RobotomyRequestForm: public AForm
 {
-	private:
-		std::string	_target;
 	public:
 		//constuct/destruct
 		RobotomyRequestForm();
@@ -33,6 +31,8 @@ class RobotomyRequestForm: public AForm
 
 		// inherited function
 		void execute(const Bureaucrat& executor) const;
+	private:
+		std::string	_target;
 };
 
 #endif

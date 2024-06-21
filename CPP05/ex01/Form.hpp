@@ -11,7 +11,6 @@ class Form
 {
 	public:
 		// Constructors
-		Form();
 		Form(const Form &copy);
 		Form(const std::string name, const int grade_to_sign, const int grade_to_exe);
 
@@ -29,10 +28,12 @@ class Form
 
 		// Exceptions
 		class GradeTooHighException : public std::exception {
-			virtual const char* what() const throw();
+			public:
+			    virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
-			virtual const char* what() const throw();
+            public:
+			    virtual const char* what() const throw();
 		};
 
 		// Functions
@@ -42,7 +43,7 @@ class Form
 		bool _signed;
 		const int _grade_to_exe;
 		const int _grade_to_sign;
-
+		Form();
 };
 
 // Stream operators

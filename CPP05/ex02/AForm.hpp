@@ -11,7 +11,6 @@ class AForm
 {
 	public:
 		// Constructors
-		AForm();
 		AForm(const AForm &copy);
 		AForm(const std::string name, const int grade_to_sign, const int grade_to_exe);
 
@@ -19,7 +18,6 @@ class AForm
 		virtual ~AForm();
 
 		// Operators
-		AForm & operator=(const AForm &assign);
 
 		// Getters / Setters
 		const std::string getName() const;
@@ -27,17 +25,19 @@ class AForm
 		int		getGrade_to_sign() const;
 		int		getGrade_to_exe() const;
 
-		// void	setGrade_to_sign();
-		// void	setGrade_to_exe();
-
 		// Exceptions
 		class GradeTooHighException : public std::exception {
-			virtual const char* what() const throw();
+            public:
+			    virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
-			virtual const char* what() const throw();
+            public:
+			    virtual const char* what() const throw();
 		};
-
+        class IsNotSignedException : public std::exception {
+            public:
+			    virtual const char* what() const throw();
+		};
 		// Functions
 		void beSigned(const Bureaucrat& b);
 		bool isValid(const Bureaucrat& b) const;
@@ -48,6 +48,8 @@ class AForm
 		bool _signed;
 		const int _grade_to_sign;
 		const int _grade_to_exe;
+		AForm();
+		AForm & operator=(const AForm &assign);
 };
 
 // Stream operators

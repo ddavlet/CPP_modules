@@ -1,11 +1,6 @@
 #include "Bureaucrat.hpp"
 
 // Constructors
-Bureaucrat::Bureaucrat() : _name("")
-{
-	_grade = 0;
-	std::cout << "\e[0;33mDefault Constructor called of Bureaucrat\e[0m" << std::endl;
-}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName())
 {
@@ -56,7 +51,6 @@ int Bureaucrat::getGrade() const
 {
 	return _grade;
 }
-
 
 // Exceptions
 const char * Bureaucrat::GradeTooHighException::what() const throw()

@@ -1,11 +1,6 @@
 #include "Form.hpp"
 
 // Constructors
-Form::Form() : _name(""), _grade_to_exe(0), _grade_to_sign(0)
-{
-	_signed = false;
-	std::cout << "\e[0;33mDefault Constructor called of Form\e[0m" << std::endl;
-}
 Form::Form(const Form &copy) : _name(copy.getName()), _grade_to_exe(copy.getGrade_to_sign()), _grade_to_sign(copy.getGrade_to_exe())
 {
 	_signed = copy.getSigned();
@@ -67,7 +62,7 @@ const char * Form::GradeTooLowException::what() const throw()
 
 void Form::beSigned(const Bureaucrat& b)
 {
-	if (b.getGrade() <= _grade_to_sign && b.getGrade() <= _grade_to_exe)
+	if (b.getGrade() <= _grade_to_sign)
 		_signed = true;
 	else
 		throw GradeTooLowException();

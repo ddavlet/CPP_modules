@@ -1,11 +1,6 @@
 #include "Bureaucrat.hpp"
 
 // Constructors
-Bureaucrat::Bureaucrat() : _name("")
-{
-	_grade = 0;
-	std::cout << "\e[0;33mDefault Constructor called of Bureaucrat\e[0m" << std::endl;
-}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName())
 {
@@ -57,7 +52,6 @@ int Bureaucrat::getGrade() const
 	return _grade;
 }
 
-
 // Exceptions
 const char * Bureaucrat::GradeTooHighException::what() const throw()
 {
@@ -66,6 +60,21 @@ const char * Bureaucrat::GradeTooHighException::what() const throw()
 const char * Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "Too low grade exception";
+}
+
+void Bureaucrat::signForm(Form& form)
+{
+    try {
+        form.beSigned(*this);
+    } catch (Form::GradeTooLowException& e) {
+        std::cout << this->getName()
+            << " couldn't sign "
+            << form.getName()
+            << " because "
+            << e.what()
+            << std::endl;
+    }
+
 }
 
 void Bureaucrat::up_grade(int val)
@@ -84,24 +93,9 @@ void Bureaucrat::down_grade(int val)
 	_grade += val;
 }
 
-void Bureaucrat::signForm(Form& form)
-{
-	try
-	{
-		form.beSigned(*this);
-		std::cout << this->getName() << " signed " << form.getName() << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout <<this->getName() << " couldn't sign " << form.getName() << " because ";
-		std::cout << e.what() << std::endl;
-	}
-}
-
 // Stream operators
 std::ostream & operator<<(std::ostream &stream, const Bureaucrat &object)
 {
-	stream << "Bureaucrat :" << object.getName() << std::endl;
-	stream << ", Bureaucrat grade :" << object.getGrade() << std::endl;
+	stream << "" << object.getName() << ", Bureaucrat grade " << object.getGrade() << "" << std::endl;
 	return stream;
 }

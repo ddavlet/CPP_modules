@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:49:46 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 16:36:54 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/06/18 21:07:06 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@ Cat::Cat() {
 
 Cat::~Cat() {
 	std::cout << "Cat object has been destroyed" << std::endl;
+}
+
+Cat::Cat(const Cat& src) {
+
+}
+
+Cat& Cat::operator=(const Cat& src) {
+
 }
 
 void	Cat::makeSound() const {

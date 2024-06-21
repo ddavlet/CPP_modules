@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:38:09 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/04/23 16:38:45 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/06/18 23:01:18 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ int main()
 	const Animal* i = new Cat();
 
 	Dog dog;
+    Dog dog2(dog);
 	Cat cat;
 
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
+    std::cout << dog2.getType() << std::endl;
 	i->makeSound();
 	j->makeSound();
 	// meta->makeSound();

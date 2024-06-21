@@ -24,8 +24,9 @@ class Intern
 		// Functions
 		AForm* makeForm(std::string name, std::string target);
 
-	private:
-
-};
-
+        //Exceptions
+        class WrongFormNameException : public std::exception {
+			virtual const char* what() const throw();
+		};
+}
 #endif
