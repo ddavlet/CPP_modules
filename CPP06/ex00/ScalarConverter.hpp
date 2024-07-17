@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <sstream>
 
 class ScalarConverter
 {
@@ -14,6 +15,11 @@ class ScalarConverter
 		ScalarConverter(const ScalarConverter &copy);
 		~ScalarConverter();
 		ScalarConverter & operator=(const ScalarConverter &assign);
+		static int find_type(std::string);
+		static void print_char(int, std::string);
+		static void print_int(int, std::string);
+		static void print_float(int, std::string);
+		static void print_double(int, std::string);
 
 };
 

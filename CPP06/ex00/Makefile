@@ -4,7 +4,7 @@ TARGET := ./ex00
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
-SOURCE := main.cpp
+SOURCE := main.cpp ScalarConverter.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
 
