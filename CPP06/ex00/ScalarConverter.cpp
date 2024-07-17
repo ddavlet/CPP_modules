@@ -5,25 +5,6 @@ ScalarConverter::ScalarConverter()
 {
 }
 
-ScalarConverter::ScalarConverter(const ScalarConverter &copy)
-{
-	(void) copy;
-}
-
-
-// Destructor
-ScalarConverter::~ScalarConverter()
-{
-}
-
-
-// Operators
-ScalarConverter & ScalarConverter::operator=(const ScalarConverter &assign)
-{
-	(void) assign;
-	return *this;
-}
-
 void ScalarConverter::convert(std::string input)
 {
 	if (input.empty())

@@ -12,9 +12,6 @@ class ScalarConverter
 
 	private:
 		ScalarConverter();
-		ScalarConverter(const ScalarConverter &copy);
-		~ScalarConverter();
-		ScalarConverter & operator=(const ScalarConverter &assign);
 		static int find_type(std::string);
 		static void print_char(int, std::string);
 		static void print_int(int, std::string);
