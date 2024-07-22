@@ -3,10 +3,14 @@
 
 # include <map>
 # include <iostream>
+# include <fstream>
+# include <sstream>
+# include <string>
+# include <iomanip>
 
 class BitcoinExchange
 {
-	typedef typename std::map<std::string, int> map;
+	typedef std::map<std::string, float> map;
 	private:
 		map data;
 	public:
@@ -15,9 +19,16 @@ class BitcoinExchange
 		BitcoinExchange &operator=(const BitcoinExchange& src);
 		~BitcoinExchange();
 
-		void append(std::string key, int value);
-		void append(std::map<std::string, int>);
+		map::size_type data_size() const;
+		map::const_iterator operator[](map::size_type pos) const;
+		map::value_type::second_type operator[](std::string key) const;
+
+		void append(std::string key, float value);
+		void append(std::map<std::string, float>);
+		void append(std::string line);
 };
 
+
+std::ostream &operator<<(std::ostream &os, const BitcoinExchange &be);
 
 #endif
