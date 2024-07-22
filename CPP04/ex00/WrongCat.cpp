@@ -22,9 +22,11 @@ WrongCat::~WrongCat() {
 }
 
 WrongCat::WrongCat(const WrongCat& src) {
-
+	type = src.getType();
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& src) {
-
+	if (this != &src)
+		type = src.getType();
+	return *this;
 }

@@ -13,11 +13,24 @@
 #include "Cure.hpp"
 
 Cure::Cure () : AMateria("cure") {
-	std::cout << "Cure constructor" << std::endl;
+	std::cout << "Cure default constructor" << std::endl;
 }
 
 Cure::~Cure () {
 	std::cout << "Cure destructor" << std::endl;
+}
+
+Cure::Cure(const Cure &src)
+{
+	std::cout << "Cure copy constructor" << std::endl;
+	type = src.getType();
+}
+
+Cure &Cure::operator=(const Cure &src)
+{
+	if (this != &src)
+		type = src.getType();
+	return *this;
 }
 
 AMateria* Cure::clone() const {

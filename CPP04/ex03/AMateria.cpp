@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:48:45 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/05/12 08:59:50 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/07/22 13:15:25 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ AMateria::~AMateria () {
 AMateria& AMateria::operator=(const AMateria& src) {
 	if (this != &src)
 	{
-		delete (this);
-		*this = src;
+		type = src.getType();
 	}
 	return *this;
 }

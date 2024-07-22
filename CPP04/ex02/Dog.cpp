@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:52:28 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/06/18 23:03:17 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/07/22 13:09:31 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,18 @@ Dog::~Dog() {
 }
 
 Dog::Dog(const Dog& src): brain(new Brain(*src.brain)) {
+	type = src.getType();
 
 }
 
 Dog& Dog::operator=(const Dog& src) {
-    delete this->brain;
-    this->brain = new Brain(*src.brain);
-    return *this;
+	if (this != &src)
+	{
+		delete this->brain;
+		this->brain = new Brain(*src.brain);
+		type = src.getType();
+	}
+	return *this;
 }
 
 void	Dog::makeSound() const {
