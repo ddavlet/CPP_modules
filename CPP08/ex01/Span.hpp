@@ -15,15 +15,10 @@ class Span
 		~Span();
 		Span &operator=(const Span &src);
 		void addNumber(int);
-		void addBulk(unsigned int);
+		void addBulk(std::vector<int>::iterator begin,
+			std::vector<int>::iterator end);
 		long shortestSpan();
 		long longestSpan();
-
-		class IsFullException: public std::exception
-		{
-			public:
-				const char *what() const throw();
-		};
 		unsigned int		_max;
 		std::vector<int>	arr;
 	private:

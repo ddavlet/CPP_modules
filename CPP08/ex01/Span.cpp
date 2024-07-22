@@ -24,20 +24,17 @@ Span &Span::operator=(const Span &src)
 void Span::addNumber(int i)
 {
 	if (arr.size() == _max)
-		throw IsFullException();
+		throw std::out_of_range("Span is full");
 	arr.push_back(i);
 	std::sort(arr.begin(), arr.end());
 }
 
-void Span::addBulk(unsigned int N)
+void Span::addBulk(std::vector<int>::iterator begin,
+			std::vector<int>::iterator end)
 {
-	if (this->_max - this->arr.size() < N)
-		throw IsFullException();
-	srand(static_cast<unsigned int>(time(0)));
-	for (unsigned int i = 0; i < N; ++i)
-	{
-		arr.push_back(rand() % INT32_MAX * ((rand() % 2) ? -1 : 1));
-	}
+	if (std::distance(begin, end) > (long)this->_max - (long)this->arr.size())
+		throw std::out_of_range("Not enough space in Span container");
+	arr.insert(arr.end(), begin, end);
 	std::sort(arr.begin(), arr.end());
 }
 
@@ -63,10 +60,6 @@ long Span::shortestSpan()
 long Span::longestSpan()
 {
 	return *(arr.end() -1) - *arr.begin();
-}
-
-const char *Span::IsFullException::what() const throw() {
-	return "Container limit exeeded";
 }
 
 Span::~Span()
