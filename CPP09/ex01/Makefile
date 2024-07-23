@@ -1,10 +1,10 @@
 CC := c++
-CPPFLAGS := -Wall -Wextra -Werror -std=c++98
-TARGET := ./ex00
+CPPFLAGS := -Wall -Wextra -Werror -std=c++98 -g -fno-limit-debug-info
+TARGET := ./ex01
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
-SOURCE := main.cpp Bureaucrat.cpp
+SOURCE := main.cpp BitcoinExchange.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
 

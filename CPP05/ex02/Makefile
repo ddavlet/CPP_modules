@@ -1,5 +1,5 @@
 CC := c++
-CPPFLAGS := -Wall -Wextra -Werror -std=c++98 -g -Wno-shadow
+CPPFLAGS := -Wall -Wextra -Werror -std=c++98
 TARGET := ./ex02
 INCLUDES :=
 RM := rm -f

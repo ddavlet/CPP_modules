@@ -35,13 +35,14 @@ const std::string& RobotomyRequestForm::getTarget() const
 void	RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
 	try {
-	    if (isValid(executor))
-            std::cout << "***drilling noises***" << std::endl;
-            if (rand() % 2)
-                std::cout << getTarget() << " is robotomized successfully" << std::endl;
-            else
-                std::cout << "robotomy failed" << std::endl;
-	} catch (const std::exception& e) {
-        std::cout << "Execution failed, error caught: " << e.what() << std::endl;
+	    isValid(executor);
+        std::cout << "***drilling noises***" << std::endl;
+		srand(static_cast<unsigned int>(time(0)));
+		if (rand() % 2)
+			std::cout << getTarget() << " is robotomized successfully" << std::endl;
+		else
+			std::cout << "robotomy failed" << std::endl;
+    } catch (const std::exception& e) {
+        throw ;
     }
 }

@@ -1,11 +1,11 @@
 CC := c++
-CPPFLAGS := -Wall -Wextra -Werror -std=c++98 -g -Wno-shadow
+CPPFLAGS := -Wall -Wextra -Werror -std=c++98 -g -fno-limit-debug-info
 TARGET := ./ex03
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
 SOURCE := main.cpp AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp \
-			RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+			RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
 

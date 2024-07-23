@@ -28,5 +28,6 @@ class Intern
         class WrongFormNameException : public std::exception {
 			virtual const char* what() const throw();
 		};
-}
+};
+
 #endif

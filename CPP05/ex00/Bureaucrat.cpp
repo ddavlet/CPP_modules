@@ -2,6 +2,10 @@
 
 // Constructors
 
+Bureaucrat::Bureaucrat() {
+
+}
+
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName())
 {
 	if (copy.getGrade() < 1)
@@ -81,6 +85,6 @@ void Bureaucrat::down_grade(int val)
 // Stream operators
 std::ostream & operator<<(std::ostream &stream, const Bureaucrat &object)
 {
-	stream << "" << object.getName() << ", Bureaucrat grade " << object.getGrade() << "" << std::endl;
+	stream << object.getName() << ", bureaucrat grade " << object.getGrade() << "." << std::endl;
 	return stream;
 }

@@ -11,6 +11,7 @@ class AForm
 {
 	public:
 		// Constructors
+		AForm();
 		AForm(const AForm &copy);
 		AForm(const std::string name, const int grade_to_sign, const int grade_to_exe);
 
@@ -18,7 +19,7 @@ class AForm
 		virtual ~AForm();
 
 		// Operators
-
+		AForm & operator=(const AForm &assign);
 		// Getters / Setters
 		const std::string getName() const;
 		bool	getSigned() const;
@@ -48,8 +49,6 @@ class AForm
 		bool _signed;
 		const int _grade_to_sign;
 		const int _grade_to_exe;
-		AForm();
-		AForm & operator=(const AForm &assign);
 };
 
 // Stream operators

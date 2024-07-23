@@ -28,7 +28,7 @@ class Bureaucrat
 			    virtual const char* what() const throw();
 		};
 
-        void signForm(AForm& form);
+		void signForm(AForm& form);
 		void up_grade(int val);
 		void down_grade(int val);
 

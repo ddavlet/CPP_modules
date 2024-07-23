@@ -36,10 +36,10 @@ const std::string& ShrubberyCreationForm::getTarget() const
 void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
 	try {
-	    if (isValid(executor))
-            draw_asciitree();
-	} catch (const std::exception& e) {
-        std::cout << "Execution failed, error caught: " << e.what() << std::endl;
+	    isValid(executor);
+        draw_asciitree();
+    } catch (const std::exception& e) {
+        throw ;
     }
 }
 

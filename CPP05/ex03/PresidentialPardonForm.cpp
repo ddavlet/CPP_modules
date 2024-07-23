@@ -35,10 +35,10 @@ const std::string& PresidentialPardonForm::getTarget() const
 void	PresidentialPardonForm::execute(const Bureaucrat& executor) const
 {
     try {
-	    if (isValid(executor))
-	    	std::cout << getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	    isValid(executor);
+	    std::cout << getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Execution failed, error caught: " << e.what() << std::endl;
+        throw ;
     }
 
 }

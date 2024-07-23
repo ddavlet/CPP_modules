@@ -27,7 +27,7 @@ Intern & Intern::operator=(const Intern &assign)
 	return *this;
 }
 
-const char *Intern::WrongFormNameException::what() const {
+const char *Intern::WrongFormNameException::what() const throw () {
     return "Wrong name of the form";
 }
 
@@ -51,17 +51,22 @@ static AForm	*new_shrubbery(std::string target)
 
 AForm* Intern::makeForm(std::string name, std::string target)
 {
-	int i = 0;
-	AForm* form;
+	AForm* form = 0;
     AForm* (*form_maker[3])(std::string) = {new_president, new_robotomy, new_shrubbery};
 	std::string matches[3] = {"presidential request", "robotomy request", "shrubbery request"};
-	for (i = 0; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (matches[i] == name)
+		{
 			form = form_maker[i](target);
+			break ;
+		}
 	}
     if (form)
+	{
+		std::cout << "Inter creates" << form->getName() << std::endl;
         return form;
+	}
     else
         throw WrongFormNameException();
 }

@@ -1,6 +1,8 @@
 #include "AForm.hpp"
 
 // Constructors
+AForm::AForm(): _name("Default"), _signed(false), _grade_to_sign(1), _grade_to_exe(1)
+{}
 AForm::AForm(const AForm &copy) : _name(copy.getName()),  _grade_to_sign(copy.getGrade_to_exe()), _grade_to_exe(copy.getGrade_to_sign())
 {
 	_signed = copy.getSigned();
@@ -22,11 +24,11 @@ AForm::~AForm()
 
 
 // Operators
-// AForm & AForm::operator=(const AForm &assign)
-// {
-// 	_signed = assign.getSigned();
-// 	return *this;
-// }
+AForm & AForm::operator=(const AForm &assign)
+{
+	_signed = assign.getSigned();
+	return *this;
+}
 
 
 // Getters / Setters
@@ -77,9 +79,10 @@ bool AForm::isValid(const Bureaucrat& b) const
 {
     if (b.getGrade() > _grade_to_exe)
         throw GradeTooLowException();
-    if (!this->_signed)
+    else if (!this->_signed)
         throw IsNotSignedException();
-	return true;
+	else
+		return true;
 }
 
 // Stream operators
