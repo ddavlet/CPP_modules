@@ -27,6 +27,6 @@ int main() {
 	b1.signForm(*rrf1);
 	b1.executeForm(*rrf1);
 	b1.signForm(*scf1);
-	b1.signForm(*scf1);
+	b1.executeForm(*scf1);
 	return 0;
 }
