@@ -4,7 +4,7 @@ TARGET := ./ex01
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=
-SOURCE := main.cpp BitcoinExchange.cpp
+SOURCE := main.cpp RPN.cpp
 SRC := $(addprefix $(SRC_DIR), $(SOURCE))
 OBJ := $(SRC:.cpp=.o)
 

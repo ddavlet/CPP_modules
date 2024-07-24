@@ -13,7 +13,6 @@ class RPN: public std::queue<char>
 		RPN &operator=(const RPN &src);
 		~RPN();
 
-		// void push(char value);
 };
 
 #endif

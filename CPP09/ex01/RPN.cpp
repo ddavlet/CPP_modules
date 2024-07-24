@@ -18,8 +18,3 @@ RPN &RPN::operator=(const RPN &src)
 RPN::~RPN()
 {
 }
-
-// void RPN::push(char value)
-// {
-// 	Container::c.push_back(value);
-// }
