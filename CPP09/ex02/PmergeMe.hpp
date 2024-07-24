@@ -8,6 +8,17 @@
 # include <ostream>
 
 template <typename Container>
+bool find_duplicate(const Container &nums, int new_value)
+{
+	for (size_t i = 0; i < nums.size(); ++i)
+	{
+		if (nums[i] == new_value)
+			return true;
+	}
+	return false;
+}
+
+template <typename Container>
 void mergeInsertSort(Container &nums)
 {
 	if (nums.size() <= 1)
@@ -51,18 +62,16 @@ Container build_container(const char **args)
 		std::stringstream ss(args[i]);
 		ss >> entry;
 		if (ss.fail())
-		{
-			std::cout << "Wrong argument" << std::endl;
-			continue ;
-		}
+			throw 42;
+		if (find_duplicate(container, entry) || entry < 0)
+			throw 41;
 		container.push_back(entry);
 	}
 	return container;
 }
+
 std::ostream &operator<<(std::ostream &os, const std::vector<int> &container);
 
 std::ostream &operator<<(std::ostream &os, const std::deque<int> &container);
-
-
 
 #endif

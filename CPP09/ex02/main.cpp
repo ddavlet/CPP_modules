@@ -1,20 +1,44 @@
 #include "PmergeMe.hpp"
-#include <chrono>
+#include <ctime>
+#include <time.h>
 
 int main(int argc, const char *argv[])
 {
+	/*containers*/
 	std::vector<int> vector_container;
 	std::deque<int> deque_container;
+	/*time calculations*/
+	std::clock_t start;
+	std::clock_t finish;
 
 	if (argc < 2)
 	{
 		std::cout << "Need at least one argument for the program" << std::endl;
 		return 0;
 	}
-	std::chrono::time_point<std::chrono::high_resolution_clock> start;
-	std::chrono::time_point<std::chrono::high_resolution_clock> finish;
+	try {
+		vector_container = build_container<std::vector<int> >(&argv[1]);
+	} catch (int err_code) {
+		std::cout << "Error" <<std::endl;
+		return 0;
+	}
+	std::cout << "Before: " << vector_container << std::endl;
+	mergeInsertSort(vector_container);
+	std::cout << "After: " << vector_container << std::endl;
 
+	/*Vector container sort*/
+	start = std::clock();
 	vector_container = build_container<std::vector<int> >(&argv[1]);
-	std::cout << "Before: \n" << vector_container << std::endl;
+	mergeInsertSort(vector_container);
+	finish = std::clock();
+	std::cout << "Time to process a range of 5 elements with std::vector<int>: "
+		<< std::difftime(finish, start) << std::endl;
 
+	/*Deque contaner sort*/
+	start = std::clock();
+	deque_container = build_container<std::deque<int> >(&argv[1]);
+	mergeInsertSort(vector_container);
+	finish = std::clock();
+	std::cout << "Time to process a range of 5 elements with std::deque<int>: "
+		<< std::difftime(finish, start) << std::endl;
 }
