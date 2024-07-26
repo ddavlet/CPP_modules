@@ -1,16 +1,23 @@
 #include "AForm.hpp"
 
 // Constructors
-AForm::AForm(): _name("Default"), _signed(false), _grade_to_sign(1), _grade_to_exe(1)
-{}
+
 AForm::AForm(const AForm &copy) : _name(copy.getName()),  _grade_to_sign(copy.getGrade_to_exe()), _grade_to_exe(copy.getGrade_to_sign())
 {
+	if (copy.getGrade_to_sign() < 1 || copy.getGrade_to_exe() < 1)
+		GradeTooHighException();
+	if (copy.getGrade_to_sign() > 150 || copy.getGrade_to_exe() > 150)
+		GradeTooLowException();
 	_signed = copy.getSigned();
 	std::cout << "\e[0;33mCopy Constructor called of AForm\e[0m" << std::endl;
 }
 
 AForm::AForm(const std::string name, const int grade_to_sign, const int grade_to_exe) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_exe(grade_to_exe)
 {
+	if (_grade_to_sign < 1 || _grade_to_exe < 1)
+		GradeTooHighException();
+	if (grade_to_sign > 150 || grade_to_exe > 150)
+		GradeTooLowException();
 	_signed = false;
 	std::cout << "\e[0;33mFields Constructor called of AForm\e[0m" << std::endl;
 }
@@ -26,6 +33,8 @@ AForm::~AForm()
 // Operators
 AForm & AForm::operator=(const AForm &assign)
 {
+	if (assign.getGrade_to_sign() < _grade_to_sign)
+		GradeTooLowException();
 	_signed = assign.getSigned();
 	return *this;
 }

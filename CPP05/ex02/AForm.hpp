@@ -11,7 +11,6 @@ class AForm
 {
 	public:
 		// Constructors
-		AForm();
 		AForm(const AForm &copy);
 		AForm(const std::string name, const int grade_to_sign, const int grade_to_exe);
 
@@ -45,6 +44,7 @@ class AForm
 		// pure virtual functions
 		virtual void execute(const Bureaucrat& executor) const = 0;
 	private:
+		AForm();
 		const std::string _name;
 		bool _signed;
 		const int _grade_to_sign;

@@ -40,9 +40,9 @@ class Form
 		void	beSigned(const Bureaucrat& b);
 	private:
 		const std::string _name;
-		bool _signed;
-		const int _grade_to_exe;
 		const int _grade_to_sign;
+		const int _grade_to_exe;
+		bool _signed;
 		Form();
 };
 

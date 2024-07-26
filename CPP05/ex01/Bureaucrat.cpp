@@ -5,7 +5,7 @@
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName())
 {
 	if (copy.getGrade() < 1)
-		throw GradeTooLowException();
+		throw GradeTooHighException();
 	if (copy.getGrade() > 150)
 		throw GradeTooLowException();
 	_grade = copy.getGrade();

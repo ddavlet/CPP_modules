@@ -1,18 +1,25 @@
 #include "Form.hpp"
 
 // Constructors
-Form::Form(const Form &copy) : _name(copy.getName()), _grade_to_exe(copy.getGrade_to_sign()), _grade_to_sign(copy.getGrade_to_exe())
+Form::Form(const Form &copy) : _name(copy.getName()), _grade_to_sign(getGrade_to_sign()), _grade_to_exe(copy.getGrade_to_exe())
 {
+	if (copy.getGrade_to_sign() < 1 || copy.getGrade_to_exe() < 1)
+		GradeTooHighException();
+	if (copy.getGrade_to_sign() > 150 || copy.getGrade_to_exe() > 150)
+		GradeTooLowException();
 	_signed = copy.getSigned();
 	std::cout << "\e[0;33mCopy Constructor called of Form\e[0m" << std::endl;
 }
 
-Form::Form(const std::string name, const int grade_to_sign, const int grade_to_exe) : _name(name), _grade_to_exe(grade_to_exe), _grade_to_sign(grade_to_sign)
+Form::Form(const std::string name, const int grade_to_sign, const int grade_to_exe) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_exe(grade_to_exe)
 {
 	_signed = false;
+	if (_grade_to_sign < 1 || _grade_to_exe < 1)
+		GradeTooHighException();
+	if (grade_to_sign > 150 || grade_to_exe > 150)
+		GradeTooLowException();
 	std::cout << "\e[0;33mFields Constructor called of Form\e[0m" << std::endl;
 }
-
 
 // Destructor
 Form::~Form()
@@ -24,6 +31,10 @@ Form::~Form()
 // Operators
 Form & Form::operator=(const Form &assign)
 {
+	if (assign.getGrade_to_sign() < _grade_to_sign || assign.getGrade_to_exe() < _grade_to_exe)
+		GradeTooHighException();
+	if (assign.getGrade_to_sign() > _grade_to_sign || assign.getGrade_to_exe() > _grade_to_exe)
+		GradeTooLowException();
 	_signed = assign.getSigned();
 	return *this;
 }
