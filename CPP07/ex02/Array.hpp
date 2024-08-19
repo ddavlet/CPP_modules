@@ -8,7 +8,7 @@ class Array
 {
 	public:
 		Array() {
-			T *arr = 0;
+			T *arr = new T[0];
 			this->arr = arr;
 			this->_size = 0;
 		};
@@ -22,7 +22,7 @@ class Array
 		};
 		Array(Array &src) {
 			unsigned int src_size = src.size();
-			T *arr = new T[src_size]();
+			T *arr = new T[src_size];
 			this->arr = arr;
 			this->_size = src_size;
 			for (unsigned int i = 0; i < src_size; ++i)

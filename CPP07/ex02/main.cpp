@@ -1,49 +1,14 @@
-// #include "Array.hpp"
-// #include <iostream>
-
-// int main()
-// {
-// 	std::string str;
-// 	Array<int> arr_int(5);
-// 	Array<int> *arr_int_ptr = new Array<int>(5);
-// 	Array<int> arr_int_cpy(*arr_int_ptr);
-// 	Array<int> arr_int_new;
-
-// 	for (unsigned int i = 0; i <= arr_int.size(); ++i)
-// 	{
-// 		try
-// 		{
-// 			std::cout << arr_int[i] << std::endl;
-// 		}
-// 		catch(const std::exception& e)
-// 		{
-// 			std::cerr << e.what() << '\n';
-// 		}
-// 	}
-// 	delete arr_int_ptr;
-// 	for (unsigned int i = 0; i <= arr_int_cpy.size(); ++i)
-// 	{
-// 		try
-// 		{
-// 			std::cout << arr_int_cpy[i] << std::endl;
-// 		}
-// 		catch(const std::exception& e)
-// 		{
-// 			std::cerr << e.what() << '\n';
-// 		}
-// 	}
-// 	return 0;
-// }
-
 #include <iostream>
 #include <cstdlib>
 #include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 10
 int main(int, char**)
 {
 	{
 		std::string str;
+		Array<std::string> arr_str;
+		Array<std::string> arr_str2(2);
 		Array<int> arr_int(5);
 		Array<int> *arr_int_ptr = new Array<int>(5);
 		Array<int> arr_int_cpy(*arr_int_ptr);
@@ -135,7 +100,7 @@ int main(int, char**)
 			std::cerr << e.what() << '\n';
 		}
 	}
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }
 
