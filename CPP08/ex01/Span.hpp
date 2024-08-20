@@ -17,8 +17,8 @@ class Span
 		void addNumber(int);
 		void addBulk(std::vector<int>::iterator begin,
 			std::vector<int>::iterator end);
-		long shortestSpan();
-		long longestSpan();
+		long shortestSpan() const;
+		long longestSpan() const;
 		unsigned int		_max;
 		std::vector<int>	arr;
 	private:

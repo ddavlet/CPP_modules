@@ -20,6 +20,17 @@ typename T::iterator easyfind(T &arr, int to_find)
 		return value;
 	else
 		throw NotFoundException();
+
+}
+
+template <typename T>
+typename T::const_iterator easyfind(const T &arr, int to_find)
+{
+	typename T::const_iterator value = std::find(arr.begin(), arr.end(), to_find);
+	if (value != arr.end())
+		return value;
+	else
+		throw NotFoundException();
 }
 
 #endif

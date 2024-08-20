@@ -38,10 +38,10 @@ void Span::addBulk(std::vector<int>::iterator begin,
 	std::sort(arr.begin(), arr.end());
 }
 
-long Span::shortestSpan()
+long Span::shortestSpan() const
 {
-	std::vector<int>::iterator next;
-	std::vector<int>::iterator prev;
+	std::vector<int>::const_iterator next;
+	std::vector<int>::const_iterator prev;
 	int smallest_diff;
 
 	prev = arr.begin();
@@ -57,7 +57,7 @@ long Span::shortestSpan()
 	return smallest_diff;
 }
 
-long Span::longestSpan()
+long Span::longestSpan() const
 {
 	return *(arr.end() -1) - *arr.begin();
 }
