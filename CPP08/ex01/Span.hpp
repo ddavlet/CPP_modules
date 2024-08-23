@@ -14,13 +14,13 @@ class Span
 		Span(const Span &src);
 		~Span();
 		Span &operator=(const Span &src);
-		void addNumber(int);
-		void addBulk(std::vector<int>::iterator begin,
-			std::vector<int>::iterator end);
+		void addNumber(unsigned int);
+		void addBulk(std::vector<unsigned int>::iterator begin,
+			std::vector<unsigned int>::iterator end);
 		long shortestSpan() const;
 		long longestSpan() const;
 		unsigned int		_max;
-		std::vector<int>	arr;
+		std::vector<unsigned int>	arr;
 	private:
 };
 

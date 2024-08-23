@@ -14,7 +14,7 @@ int main ()
 	std::cout << sp.longestSpan() << std::endl;
 	{
 		Span sp2 = Span(10000);
-		std::vector<int> arr;
+		std::vector<unsigned int> arr;
 		srand(static_cast<unsigned int>(time(0)));
 		for (int i = 0; i < 10000; ++i)
 			arr.push_back(rand() % INT32_MAX * ((rand() % 2) ? -1 : 1));

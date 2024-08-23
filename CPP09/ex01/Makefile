@@ -1,6 +1,6 @@
 CC := c++
 CPPFLAGS := -Wall -Wextra -Werror -std=c++98 -g -fno-limit-debug-info
-TARGET := ./ex01
+TARGET := ./RPN
 INCLUDES :=
 RM := rm -f
 SRC_DIR :=

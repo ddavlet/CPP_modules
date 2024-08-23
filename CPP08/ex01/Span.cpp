@@ -21,7 +21,7 @@ Span &Span::operator=(const Span &src)
 	return *this;
 }
 
-void Span::addNumber(int i)
+void Span::addNumber(unsigned int i)
 {
 	if (arr.size() == _max)
 		throw std::out_of_range("Span is full");
@@ -29,8 +29,8 @@ void Span::addNumber(int i)
 	std::sort(arr.begin(), arr.end());
 }
 
-void Span::addBulk(std::vector<int>::iterator begin,
-			std::vector<int>::iterator end)
+void Span::addBulk(std::vector<unsigned int>::iterator begin,
+			std::vector<unsigned int>::iterator end)
 {
 	if (std::distance(begin, end) > (long)this->_max - (long)this->arr.size())
 		throw std::out_of_range("Not enough space in Span container");
@@ -40,9 +40,9 @@ void Span::addBulk(std::vector<int>::iterator begin,
 
 long Span::shortestSpan() const
 {
-	std::vector<int>::const_iterator next;
-	std::vector<int>::const_iterator prev;
-	int smallest_diff;
+	std::vector<unsigned int>::const_iterator next;
+	std::vector<unsigned int>::const_iterator prev;
+	unsigned int smallest_diff;
 
 	prev = arr.begin();
 	next = prev + 1;
