@@ -27,10 +27,10 @@ class RPN: public std::stack<int>
 		void calculate(Operation operation);
 		void add(char entry);
 		/* Operaions */
-		int add(int v1, int v2);
-		int substract(int v1, int v2);
-		int multiply(int v1, int v2);
-		int divide(int v1, int v2);
+		void add(int v1, int v2);
+		void substract(int v1, int v2);
+		void multiply(int v1, int v2);
+		void divide(int v1, int v2);
 };
 
 #endif
