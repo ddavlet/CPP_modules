@@ -1,18 +1,36 @@
 #ifndef RPN_HPP
 # define RPN_HPP
 
-# include <queue>
+# include <stack>
 # include <iostream>
+# include <sstream>
+# include <stdexcept>
+# include <string>
 
-class RPN: public std::queue<char>
+enum Operation
 {
-	typedef std::queue<char> Container;
+	ADD = '+',
+	SUB = '-',
+	DIV = '/',
+	MUL = '*'
+};
+
+
+class RPN: public std::stack<int>
+{
+	typedef std::stack<int> Container;
 	public:
 		RPN();
 		RPN(const RPN &src);
 		RPN &operator=(const RPN &src);
 		~RPN();
-
+		void calculate(Operation operation);
+		void add(char entry);
+		/* Operaions */
+		int add(int v1, int v2);
+		int substract(int v1, int v2);
+		int multiply(int v1, int v2);
+		int divide(int v1, int v2);
 };
 
 #endif

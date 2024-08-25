@@ -32,7 +32,7 @@ int main(int argc, const char *argv[])
 	mergeInsertSort(vector_container);
 	finish = std::clock();
 	std::cout << "Time to process a range of 5 elements with std::vector<int>: "
-		<< std::difftime(finish, start) << std::endl;
+		<< (float)(finish - start)/CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
 
 	/*Deque contaner sort*/
 	start = std::clock();
@@ -40,5 +40,5 @@ int main(int argc, const char *argv[])
 	mergeInsertSort(vector_container);
 	finish = std::clock();
 	std::cout << "Time to process a range of 5 elements with std::deque<int>: "
-		<< std::difftime(finish, start) << std::endl;
+		<< (float)(finish - start)/CLOCKS_PER_SEC * 1000000 << " us" << std::endl;
 }
