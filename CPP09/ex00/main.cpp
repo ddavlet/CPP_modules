@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:36:12 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/08/29 14:36:12 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/08/31 16:19:29 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void check_key(std::string key) {
 		std::stringstream key(token);
 		switch (pos)
 		{
+			int days_in_month;
 			case 0:
 				key >> year;
 				if (key.fail() || !key.eof())
@@ -53,7 +54,7 @@ void check_key(std::string key) {
 				if (key.fail() || !key.eof())
 					throw std::logic_error("check date");
 				if (token.length() != 2 ||
-					(year == now->tm_year && month > now->tm_mon + 1))
+					(year == now->tm_year + 1900 && month > now->tm_mon + 1))
 					throw std::logic_error("check date");
 				if (month > 12 || month < 1)
 					throw std::logic_error("check date");
@@ -61,14 +62,17 @@ void check_key(std::string key) {
 				continue;;
 			case 2:
 				key >> day;
+				days_in_month = daysInMonths[month - 1];
 				if (key.fail() || !key.eof())
 					throw std::logic_error("check date");
 				if (token.length() != 2 ||
-					(year == now->tm_year && month == now->tm_mon && day > now->tm_mday))
+					(year == now->tm_year + 1900 && month == now->tm_mon + 1 && day > now->tm_mday))
 					throw std::logic_error("check date");
 				if (year == 2009 && (month < 1 || (month == 1 && day < 02)))
 					throw std::logic_error("check date");
-				if (day < 1 || day > daysInMonths[month - 1])
+				if (month == 2 && year % 4 == 0)
+					days_in_month++;
+				if (day < 1 || day > days_in_month)
 					throw std::logic_error("check date");
 				pos++;
 				continue;;
