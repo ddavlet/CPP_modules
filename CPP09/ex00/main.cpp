@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/29 14:36:12 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/08/29 14:36:12 by ddavlety         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
 #include <iostream>
 #include <fstream>
@@ -6,7 +18,7 @@
 #include <ctime>
 
 #ifndef DB_FILE
-# define DB_FILE "data.csv"
+# define DB_FILE "./files/data.csv"
 #endif
 
 
@@ -120,12 +132,12 @@ int main(int argc, char *argv[])
 		}
 		if (value > 1000)
 		{
-			std::cout << "Error: too large a number." << std::endl;
+			std::cerr << "Error: value is too large." << std::endl;
 			continue;
 		}
 		if (value <= 0)
 		{
-			std::cout << "Error: not a positive number." << std::endl;
+			std::cerr << "Error: not a positive number." << std::endl;
 			continue;
 		}
 		std::cout << key << " => " << value << 	" = " << value * data[key] << std::endl;

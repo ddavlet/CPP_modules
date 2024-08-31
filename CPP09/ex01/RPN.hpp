@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/25 13:42:11 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/08/25 13:42:11 by ddavlety         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef RPN_HPP
 # define RPN_HPP
 
@@ -27,10 +39,10 @@ class RPN: public std::stack<int>
 		void calculate(Operation operation);
 		void add(char entry);
 		/* Operaions */
-		void add(int v1, int v2);
-		void substract(int v1, int v2);
-		void multiply(int v1, int v2);
-		void divide(int v1, int v2);
+		int add(int v1, int v2);
+		int substract(int v1, int v2);
+		int multiply(int v1, int v2);
+		int divide(int v1, int v2);
 };
 
 #endif

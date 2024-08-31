@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/25 13:42:29 by ddavlety          #+#    #+#             */
+/*   Updated: 2024/08/27 11:23:13 by ddavlety         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PMERGEME_HPP
 # define PMERGEME_HPP
 
@@ -12,7 +24,7 @@ bool find_duplicate(const Container &nums, int new_value)
 {
 	for (typename Container::const_iterator it = nums.begin(); it != nums.end(); ++it)
 	{
-		if ((int)*it == new_value)
+		if (*it == new_value)
 			return true;
 	}
 	return false;
