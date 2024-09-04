@@ -6,7 +6,7 @@
 /*   By: ddavlety <ddavlety@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:36:12 by ddavlety          #+#    #+#             */
-/*   Updated: 2024/08/31 16:19:29 by ddavlety         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:49:27 by ddavlety         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,9 @@ void check_key(std::string key) {
 				days_in_month = daysInMonths[month - 1];
 				if (key.fail() || !key.eof())
 					throw std::logic_error("check date");
-				if (token.length() != 2 ||
-					(year == now->tm_year + 1900 && month == now->tm_mon + 1 && day > now->tm_mday))
+				if (token.length() != 2)
+					throw std::logic_error("check date");
+				if (year == now->tm_year + 1900 && month == now->tm_mon + 1 && day > now->tm_mday)
 					throw std::logic_error("check date");
 				if (year == 2009 && (month < 1 || (month == 1 && day < 02)))
 					throw std::logic_error("check date");
@@ -134,14 +135,18 @@ int main(int argc, char *argv[])
 			std::cerr << "Error: Bad input on key " << key << std::endl;
 			continue;
 		}
+		if (!ss.eof()) {
+			std::cerr << "Error: value format is not correct on key " << key << std::endl;
+			continue;
+		}
 		if (value > 1000)
 		{
-			std::cerr << "Error: value is too large." << std::endl;
+			std::cerr << "Error: value is too large on key " << key << std::endl;
 			continue;
 		}
 		if (value <= 0)
 		{
-			std::cerr << "Error: not a positive number." << std::endl;
+			std::cerr << "Error: not a positive number on key" << key << std::endl;
 			continue;
 		}
 		std::cout << key << " => " << value << 	" = " << value * data[key] << std::endl;
